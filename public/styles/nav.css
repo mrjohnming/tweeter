@@ -1,0 +1,36 @@
+/*
+RULES:
+ * DONE - 120 pixels in height
+ * DONE - Full width of the viewport
+ * DONE - #4056A1 as its default background colour
+ * DONE - #FFFFFF as its default font colour
+ * DONE - <span> within the <nav> uses Bungee as its default font-family
+ * 1.5ems of space on the right and left between the content and the edges  
+*/
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  width: auto;
+  height: 120px;
+  padding: 0 1.5em 0 1.5em;
+}
+
+.nav-logo {
+  font-family: 'Bungee', cursive, sans-serif;
+  font-size: 45px;
+}
+
+.nav-tweet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fas.fa-angle-double-down {
+  color: red;
+}
