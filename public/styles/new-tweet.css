@@ -1,0 +1,34 @@
+.new-tweet {
+  /* border: 2px solid red; */
+  font-family: sans-serif;
+}
+
+#tweet-text {
+  border: none;
+  resize: none;
+  width: 100%;
+  border-bottom: 5px solid #545149;
+  background-color: #f4f1ec;
+}
+
+.tweet-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0.4em 0.5em 0 0;
+}
+
+.tweet-button {
+  border-radius: 4px;
+  background-color: #4056A1;
+  color: white;
+  transition-duration: 0.4s;
+}
+
+.tweet-button:hover {
+  background-color: #728fec;
+}
+
+.tweet-char {
+  font-weight: bold;
+}

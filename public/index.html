@@ -14,10 +14,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@1,300;1,600&display=swap" rel="stylesheet">
 
     <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css">
-    <link rel="stylesheet" href="/styles/header.css" type="text/css">
-    <link rel="stylesheet" href="/styles/main.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/styles/layout.css"/>
+    <link rel="stylesheet" type="text/css" href="/styles/nav.css">
+    <link rel="stylesheet" type="text/css" href="/styles/header.css">
+    <link rel="stylesheet" type="text/css" href="/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/styles/new-tweet.css">
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -29,7 +30,7 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav class="nav">
-        <div class="nav-logo">
+        <div class="nav-logo bungee-font">
           <span>TWEETER</span>
         </div>
         <div class="nav-tweet">
@@ -51,9 +52,18 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <h1>What are you humming about?</h1>
-      <h2>140 characters max</h2>
-      <p>Write your tweet here...</p>
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form action="/tweets" method="POST">
+          <label for="tweet-text"></label>
+          <textarea id="tweet-text" name="text" maxlength="150" rows="1" placeholder="What are you humming about?"></textarea>
+          <div class="tweet-footer bungee-font">
+            <button class="tweet-button" type="submit">Tweet</button>
+            <output class="tweet-char" name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      
+      </section>
     </main>
   </body>
 </html>
