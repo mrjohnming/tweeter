@@ -1,0 +1,11 @@
+/* 
+REQUIREMENTS:
+ * DONE - 90% of the width of its parent element
+ * DONE - center aligned to the body
+ * INHERITED - the same background colour as the <body> element
+*/
+
+.container {
+  width: 90%;
+  margin: auto;
+}
