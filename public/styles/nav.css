@@ -11,13 +11,14 @@ RULES:
 .nav {
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: space-between;
-  background-color: #4056A1;
-  color: #FFFFFF;
+  align-items: center;
   width: auto;
   height: 120px;
   padding: 0 1.5em 0 1.5em;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  z-index: 0;
 }
 
 .nav-logo {
