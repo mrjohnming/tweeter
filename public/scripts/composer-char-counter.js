@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-  console.log("jQuery is ready!");
+  // console.log("jQuery is ready!");
 
   $( '#tweet-text' ).on('input', function(event) {
     const max = 140;
