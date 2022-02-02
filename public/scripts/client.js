@@ -31,7 +31,7 @@ $( document ).ready(function() {
   const renderTweets = tweets => {
     for (const tweet of tweets) {
       let $tweet = createTweetElement(tweet);
-        $( '#tweets-container' ).append($tweet);
+        $( '#tweets-container' ).prepend($tweet);
       }
     }
     
@@ -49,19 +49,33 @@ $( document ).ready(function() {
     if (remainder < 0) {
       return alert(`Uh oh! Your tweet is too long.\nPlease shorten your hum by ${-remainder} characters.`);
     }
+    
+    
     const payload = $( this ).serialize();
-    $.post('/tweets', payload);
+    $.post('/tweets', payload)
+      .then(function() {        
+        
+        // Clear the textarea after a successful POST /tweets.
+        $( '#tweet-text' ).val('');
+        
+        // Add the new tweet HTML to the page without refreshing.
+        $.ajax('/tweets', { method: 'GET' })
+          .then(function(data) {
+            const newData = data[data.length - 1];
+            const $tweet = createTweetElement(newData);
+            $( '#tweets-container' ).prepend($tweet);
+          });
+      });
+  
   });
     
   // Fetch tweets with Ajax.
   const loadTweets = () => {
     $.ajax('/tweets', { method: 'GET' })
     .then(function(data) {
-       console.log('data =', data);
       renderTweets(data);
     });
   };
     
   loadTweets();
 });
-
