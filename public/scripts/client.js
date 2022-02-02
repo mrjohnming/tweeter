@@ -35,24 +35,33 @@ $( document ).ready(function() {
       }
     }
     
+  // Form submission using JQuery.
+  $( '.tweet-form' ).submit(function( event ) {
+    event.preventDefault();
+    const remainder = Number($( this ).children('.tweet-footer').children('.tweet-char').val());
     
-    // Form submission using JQuery.
-    $( '.tweet-form' ).submit(function( event ) {
-      event.preventDefault() 
-      const payload = $( this ).serialize();
-      $.post('/tweets', payload);      
-    });
-    
-    // Fetch tweets with Ajax.
-    const loadTweets = () => {
-      $.ajax('/tweets', { method: 'GET' })
-      .then(function(data) {
-        console.log('data =', data);
-        renderTweets(data);
-      });
-    };
-    
-    loadTweets();
+    // If the tweet textarea is empty, and the user tries to submit, return an appropriate alert message.
+    if (remainder === 140) {
+      return alert("Uh oh! Your tweet is empty.\nPlease share what you're humming about before submitting.");
+    }
 
+    // If the tweet textarea is >140 characters, and the user tries to submit, return an appropriate alert message.
+    if (remainder < 0) {
+      return alert(`Uh oh! Your tweet is too long.\nPlease shorten your hum by ${-remainder} characters.`);
+    }
+    const payload = $( this ).serialize();
+    $.post('/tweets', payload);
   });
+    
+  // Fetch tweets with Ajax.
+  const loadTweets = () => {
+    $.ajax('/tweets', { method: 'GET' })
+    .then(function(data) {
+       console.log('data =', data);
+      renderTweets(data);
+    });
+  };
+    
+  loadTweets();
+});
 
