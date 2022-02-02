@@ -4,6 +4,7 @@
 
 .tweet-container {
   border: 5px solid #545149;
+  margin: 1em 0 1em 0;
 }
 
 .tweet-container:hover {
