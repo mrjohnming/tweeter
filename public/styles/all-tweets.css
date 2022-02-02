@@ -1,0 +1,50 @@
+.all-tweets {
+  margin-top: 1.5em;
+}
+
+.tweet-container {
+  border: 5px solid #545149;
+}
+
+.tweet-container:hover {
+  box-shadow: 2px 2px 2px 2px #728fec;
+}
+
+.tweet-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  margin: 5px 5px 20px 5px;
+}
+
+.username {
+  font-weight: bold;
+  margin-right: 2.5px;
+}
+
+.tweeter-handle {
+  margin-left: 2.5px;
+}
+
+.tweet-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  margin: 20px 5px 20px 5px;
+}
+
+.tweet-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px 5px 5px 5px;
+}
+
+.icons {
+  color: #4056A1;
+  transition-duration: 0.4s;
+}
+
+.fas:hover {
+  color: #728fec;
+}

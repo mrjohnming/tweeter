@@ -19,6 +19,7 @@
     <link rel="stylesheet" type="text/css" href="/styles/header.css">
     <link rel="stylesheet" type="text/css" href="/styles/main.css">
     <link rel="stylesheet" type="text/css" href="/styles/new-tweet.css">
+    <link rel="stylesheet" type="text/css" href="/styles/all-tweets.css">
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -55,19 +56,36 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        
         <form action="/tweets" method="POST">
-          
           <label for="tweet-text"></label>
           <textarea id="tweet-text" name="text" maxlength="140" rows="1" placeholder="What are you humming about?"></textarea>
-          
           <div class="tweet-footer bungee-font">
             <button class="tweet-button" type="submit">Tweet</button>
             <output class="tweet-char" name="counter" class="counter" for="tweet-text">140</output>
           </div>
-        
         </form>
-      
+      </section>
+
+      <section class="all-tweets">
+        <article class="tweet-container">
+          
+          <header class="tweet-header">
+            <span class="username">John Ming</span>
+            <span class="tweeter-handle">@MrJohnMing</span>
+          </header>
+          
+          <p class="tweet-body">If I have seen further it is by standing on the shoulders of giants.</p>
+          
+          <footer class="tweet-footer">
+            <span>10 days ago</span>
+            <div class="icons">
+              <i class="fas fa-flag"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="fas fa-heart"></i>
+            </div>
+          </footer>
+        
+        </article>
       </section>
     </main>
   </body>
