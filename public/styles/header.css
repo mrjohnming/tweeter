@@ -13,6 +13,7 @@ REQUIREMENTS:
   align-items: center;
   width: auto;
   height: 400px;
+  margin-top: 120px;
   background-color: #ffdf7d;
   background-image: url("https://www.transparenttextures.com/patterns/az-subtle.png");
   z-index: -1;
