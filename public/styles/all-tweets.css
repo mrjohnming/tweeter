@@ -1,13 +1,14 @@
-.all-tweets {
-  margin-top: 1.5em;
+#tweets-container {
+  /* border: 5px solid #545149; */
+  border: 2px solid red;
 }
 
-.tweet-container {
+.tweet {
   border: 5px solid #545149;
   margin: 1em 0 1em 0;
 }
 
-.tweet-container:hover {
+.tweet:hover {
   box-shadow: 2px 2px 2px 2px #728fec;
 }
 
@@ -15,15 +16,20 @@
   display: flex;
   flex-direction: row;
   justify-content: start;
+  align-items: center;
   margin: 5px 5px 20px 5px;
 }
 
-.username {
+.user-img {
+  margin-right: 2.5px;
+}
+
+.user-name {
   font-weight: bold;
   margin-right: 2.5px;
 }
 
-.tweeter-handle {
+.user-handle {
   margin-left: 2.5px;
 }
 
