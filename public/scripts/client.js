@@ -63,4 +63,11 @@ $( document ).ready(function() {
     }
     
   renderTweets(data);
+
+  // Form submission using JQuery.
+  $( '.tweet-form' ).submit(function( event ) {
+    event.preventDefault() 
+    const payload = $( this ).serialize();
+    $.post('/tweets', payload);
+  });
 });
