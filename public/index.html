@@ -23,6 +23,7 @@
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
@@ -67,24 +68,8 @@
       </section>
 
       <section class="all-tweets">
-        <article class="tweet-container">
-          
-          <header class="tweet-header">
-            <span class="username">John Ming</span>
-            <span class="tweeter-handle">@MrJohnMing</span>
-          </header>
-          
-          <p class="tweet-body">If I have seen further it is by standing on the shoulders of giants.</p>
-          
-          <footer class="tweet-footer">
-            <span>10 days ago</span>
-            <div class="icons">
-              <i class="fas fa-flag"></i>
-              <i class="fas fa-retweet"></i>
-              <i class="fas fa-heart"></i>
-            </div>
-          </footer>
-        
+        <article id="tweets-container">
+          <!-- Populated through AJAX using the renderTweets function in ./scripts/client.js -->
         </article>
       </section>
     </main>
