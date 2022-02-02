@@ -15,6 +15,7 @@ html {
  */
 
 body {
+  overscroll-behavior: none;
   color: #545149;
   background-color: #f4f1ec;
   font-family: 'Source Sans Pro', sans-serif;
