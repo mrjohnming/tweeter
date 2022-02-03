@@ -50,13 +50,22 @@ $( document ).ready(function() {
       return alert(`Uh oh! Your tweet is too long.\nPlease shorten your hum by ${-remainder} characters.`);
     }
     
-    
-    const payload = $( this ).serialize();
+    // Character escape function to prevent XSS.
+    const escape = function (string) {
+      let div = document.createElement("div");
+      div.appendChild(document.createTextNode(string));
+      return div.innerHTML;
+    };
+
+    const payload = escape($( this ).serialize());
     $.post('/tweets', payload)
       .then(function() {        
         
         // Clear the textarea after a successful POST /tweets.
         $( '#tweet-text' ).val('');
+
+        // Reset the character counter to 140 after a successful POST /tweets.
+        $( '.tweet-char' ).val(140);
         
         // Add the new tweet HTML to the page without refreshing.
         $.ajax('/tweets', { method: 'GET' })
