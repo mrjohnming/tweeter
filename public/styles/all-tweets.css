@@ -1,6 +1,6 @@
 #tweets-container {
-  /* border: 5px solid #545149; */
   border: 2px solid red;
+  margin-top: 0.5em;
 }
 
 .tweet {
