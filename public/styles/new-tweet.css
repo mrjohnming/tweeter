@@ -1,7 +1,3 @@
-#new-tweet {
-  border: 3px solid red;
-}
-
 #error-msg {
   display: flex;
   flex-direction: row;
