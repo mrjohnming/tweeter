@@ -55,16 +55,23 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+      
       <section class="new-tweet">
+        
         <h2>Compose Tweet</h2>
+        
+        <output class="error-msg"></output>
+        
         <form class="tweet-form" action="/tweets" method="POST">
           <label for="tweet-text"></label>
           <textarea id="tweet-text" name="text" rows="1" placeholder="What are you humming about?"></textarea>
+          
           <div class="tweet-footer bungee-font">
             <button class="tweet-button" type="submit">Tweet</button>
             <output class="tweet-char" name="counter" class="counter" for="tweet-text">140</output>
-          </div>
+          </div>  
         </form>
+      
       </section>
 
       <section class="all-tweets">
@@ -72,6 +79,7 @@
           <!-- Populated through AJAX using the renderTweets function in ./scripts/client.js -->
         </article>
       </section>
+    
     </main>
   </body>
 </html>
