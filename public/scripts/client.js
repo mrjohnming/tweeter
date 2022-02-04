@@ -40,14 +40,17 @@ $( document ).ready(function() {
     event.preventDefault();
     const remainder = Number($( this ).children('.tweet-footer').children('.tweet-char').val());
     
-    // If the tweet textarea is empty, and the user tries to submit, return an appropriate alert message.
+    // Clear the value inside the .error-msg element the submit handler is triggered.
+    $( '.error-msg' ).val('');
+
+    // If the tweet textarea is empty, and the user tries to submit, return an appropriate responsive error message.
     if (remainder === 140) {
-      return alert("Uh oh! Your tweet is empty.\nPlease share what you're humming about before submitting.");
+      return $( '.error-msg' ).val("Uh oh! Your tweet is empty.\nPlease share what you're humming about before submitting.");
     }
 
-    // If the tweet textarea is >140 characters, and the user tries to submit, return an appropriate alert message.
+    // If the tweet textarea is >140 characters, and the user tries to submit, return an appropriate responsive error message.
     if (remainder < 0) {
-      return alert(`Uh oh! Your tweet is too long.\nPlease shorten your hum by ${-remainder} characters.`);
+      return $( '.error-msg' ).val(`Uh oh! Your tweet is too long.\nPlease shorten your hum by ${-remainder} characters.`);
     }
     
     // Character escape function to prevent XSS.
@@ -61,10 +64,13 @@ $( document ).ready(function() {
     $.post('/tweets', payload)
       .then(function() {        
         
-        // Clear the textarea after a successful POST /tweets.
+        // Clear the value inside the .error-msg element after a successful POST /tweets.
+        $( '.error-msg' ).val('')
+
+        // Clear the value inside the #tweet-tex element after a successful POST /tweets.
         $( '#tweet-text' ).val('');
 
-        // Reset the character counter to 140 after a successful POST /tweets.
+        // Reset the value inside the .tweet-char element to 140 after a successful POST /tweets.
         $( '.tweet-char' ).val(140);
         
         // Add the new tweet HTML to the page without refreshing.
