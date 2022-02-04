@@ -1,12 +1,4 @@
-/* 
-REQUIREMENTS:
- * DONE - The header should have a height of 400px and be 100% the width of its parent container
- * DONE - The avatar should be centered vertically and horizontally (Hint: the justify-content and align-items properties are helpful for centering things if you're using Flexbox.)
- * DONE - The name should be centered below the avatar
- * DONE - The background-color should be a different colour than the nav and the body
-*/
-
-.header {
+#header {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,13 +10,29 @@ REQUIREMENTS:
   background-image: url("https://www.transparenttextures.com/patterns/az-subtle.png");
 }
 
+#profile-img {
+  margin-top: 20px;
+}
+
+#profile-name {
+  margin-top: -60px;
+  font-size: 30px;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: black;
+  color: #FFF;
+}
+
 @media only screen and (max-width: 1024px) {
-  .header {
-    margin: 90px 0 0 0;
+  #header {
+    float: none;
+    margin: 0 auto;
     width: 100%;
-    height: 400px;
     background-color: #ffdf7d;
     background-image: url("https://www.transparenttextures.com/patterns/az-subtle.png");
-    z-index: -1;
+    z-index: -1 ;
+  }
+
+  #profile-img {
+    margin-top: 120px;
   }
 }
