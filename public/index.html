@@ -12,7 +12,7 @@
     <!-- Google Fonts: Bungee & Source Sans Pro -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@1,300;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:wght@300;600&display=swap" rel="stylesheet"> 
 
     <!-- App CSS -->
     <link rel="stylesheet" type="text/css" href="/styles/layout.css"/>
@@ -32,55 +32,54 @@
   </head>
 
   <body>
+    
     <!-- Top nav bar (fixed) -->
-    <nav class="nav">
-        <div class="nav-logo bungee-font">
+    <nav id="nav">
+        <div id="nav-logo" class="bungee-font">
           <span>TWEETER</span>
         </div>
-        <div class="nav-tweet">
-          <span><strong>Write</strong> a new tweet</span>
+        <div id="nav-tweet">
+          <span><b>Write</b> a new tweet</span>
           <i class="fas fa-angle-double-down"></i>
         </div>
     </nav>
 
-    <!-- Header -->
-    <header class="header">
-      <div>
-          <img src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div>
-          <h2>John Ming</h2>
-      </div>
-    </header>
+    <div id="max-width">
+      <!-- Header -->
+      <header id="header">
+        <div id="profile-img">
+            <img src="/images/profile-johnming.png"> 
+        </div>
+        <br>
+        <div id="profile-name">
+            <h2>John Ming</h2>
+        </div>
+      </header>
 
-    <!-- Page-specific (main) content here -->
-    <main class="container">
+      <!-- Main content -->
+      <main id="container">
       
-      <section class="new-tweet">
-        
-        <h2>Compose Tweet</h2>
-        
-        <output class="error-msg"></output>
-        
-        <form class="tweet-form" action="/tweets" method="POST">
-          <label for="tweet-text"></label>
-          <textarea id="tweet-text" name="text" rows="1" placeholder="What are you humming about?"></textarea>
-          
-          <div class="tweet-footer bungee-font">
-            <button class="tweet-button" type="submit">Tweet</button>
-            <output class="tweet-char" name="counter" class="counter" for="tweet-text">140</output>
-          </div>  
-        </form>
-      
-      </section>
+        <!-- Stylesheet: /styles/new-tweet.css -->
+        <section id="new-tweet">
+          <h2>Compose Tweet</h2>      
+          <output id="error-msg"></output>      
+          <form id="tweet-form" action="/tweets" method="POST">         
+            <label for="tweet-text"></label>
+            <textarea id="tweet-text" name="text" rows="1" placeholder="What are you humming about?"></textarea>
+            <div id="new-tweet-footer" class="bungee-font">
+              <button id="tweet-button" type="submit">Tweet</button>
+              <output id="counter" name="counter" for="tweet-text">140</output>
+            </div>  
+          </form>
+        </section>
 
-      <section class="all-tweets">
-        <article id="tweets-container">
-          <!-- Populated through AJAX using the renderTweets function in ./scripts/client.js -->
-        </article>
-      </section>
-    
-    </main>
+        <!-- Stylesheet: /styles/all-tweets.css -->
+        <section id="all-tweets">
+          <article id="tweets-container">
+            <!-- Populated using the renderTweets function in /scripts/client.js -->
+          </article>
+        </section>
+      </main>
+    </div>
   </body>
 </html>
