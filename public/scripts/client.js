@@ -10,8 +10,10 @@ $( document ).ready(function() {
     const $tweet = `
       <div class="tweet">
         <header class="tweet-header">
-        <span class="user-img"><img src="${tweetData.user.avatars}" alt="@SirIsaac profile image." width="40" height="40"></span>
-          <span class="user-name">${tweetData.user.name}</span>
+          <div class="user-profile">
+            <span class="user-img"><img src="${tweetData.user.avatars}" alt="@SirIsaac profile image." width="40" height="40"></span>
+            <span class="user-name">${tweetData.user.name}</span>
+          </div>
           <span class="user-handle">${tweetData.user.handle}</span>
         </header>
         <p class="tweet-body">${tweetData.content.text}</p>
