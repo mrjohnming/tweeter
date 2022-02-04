@@ -6,6 +6,15 @@ REQUIREMENTS:
 */
 
 .container {
-  width: 90%;
-  margin: auto;
+  float: right;
+  margin: 150px 1.5% 0 1.5%;
+  width: 63.7%;
+}
+
+@media only screen and (max-width: 1024px) {
+  .container {
+    float: initial;
+    margin: auto;
+    width: 90%;
+  }
 }
