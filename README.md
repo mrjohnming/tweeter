@@ -23,5 +23,5 @@ Tweeter is a simple, single-page Twitter clone built using HTML, CSS, JS, jQuery
 ## Getting Started
 
 1. Install all dependencies using the `npm install` command.
-2. Start the web server using the `npm start` command. The app will be served at <http://localhost:8080/>.
+2. Start the web server using the `npm start` command.
 3. Go to <http://localhost:8080/> in your browser.
