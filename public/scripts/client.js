@@ -1,11 +1,4 @@
-/*
-* Client-side JS logic goes here
-* jQuery is already loaded
-* Reminder: Use (and do all your DOM work in) jQuery's document ready function
-*/
-
 $( document ).ready(function() {
-  
   const createTweetElement = tweetData => {
     const $tweet = `
       <div class="tweet">
@@ -34,23 +27,23 @@ $( document ).ready(function() {
     for (const tweet of tweets) {
       let $tweet = createTweetElement(tweet);
         $( '#tweets-container' ).prepend($tweet);
-      }
     }
+  };
     
   // Form submission using JQuery.
   $( '#tweet-form' ).submit(function( event ) {
     event.preventDefault();
     const remainder = Number($( this ).children('#new-tweet-footer').children('#counter').val());
     
-    // Clear the value inside the #error-msg element when the submit handler is triggered.
+    // Clears the value inside the #error-msg element when the submit handler is triggered.
     $( '#error-msg' ).val('');
 
-    // If the user tries to submit when the textarea is empty, return a responsive error message.
+    // If the user tries to submit when the textarea is empty, return an appropriate responsive error message.
     if (remainder === 140) {
       return $( '#error-msg' ).val("Uh oh! Your tweet is empty.\nPlease share what you want to hum about before submitting.");
     }
 
-    // If the user tries to submit when the textarea is >140 characters, return a responsive error message.
+    // If the user tries to submit when the textarea is >140 characters, return an appropriate responsive error message.
     if (remainder < 0) {
       return $( '#error-msg' ).val(`Uh oh! Your tweet is too long.\nPlease shorten your hum by ${-remainder} characters.`);
     }
@@ -65,14 +58,14 @@ $( document ).ready(function() {
     const payload = escape($( this ).serialize());
     $.post('/tweets', payload)
       .then(function() {        
-        
-        // Clear the value inside the #error-msg element after a successful POST /tweets.
-        $( '#error-msg' ).val('')
+      
+        // Clears the value inside the #error-msg element after a successful POST /tweets.
+        $( '#error-msg' ).val('');
 
-        // Clear the value inside the #tweet-tex element after a successful POST /tweets.
+        // Clears the value inside the #tweet-tex element after a successful POST /tweets.
         $( '#tweet-text' ).val('');
 
-        // Reset the value inside the #counter element to 140 after a successful POST /tweets.
+        // Resets the value inside the #counter element to 140 after a successful POST /tweets.
         $( '#counter' ).val(140);
         
         // Add the new tweet HTML to the page without refreshing.
@@ -89,9 +82,9 @@ $( document ).ready(function() {
   // Fetch tweets with Ajax.
   const loadTweets = () => {
     $.ajax('/tweets', { method: 'GET' })
-    .then(function(data) {
-      renderTweets(data);
-    });
+      .then(function(data) {
+        renderTweets(data);
+      });
   };
     
   loadTweets();

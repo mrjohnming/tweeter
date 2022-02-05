@@ -5,10 +5,10 @@ $( document ).ready(function() {
     const remainder = max - counter;
     const tweetChar = $( this ).parent().children('#new-tweet-footer').children('#counter');
     
-    // The counter will change from the default (inherited) colour to red when >140 characters.
+    // If >140 characters, then colour is red, otherwise colour is default.
     remainder < 0 ? tweetChar.css('color', 'red') : tweetChar.css('color', 'inherit');
     
-    // Update the character counter each time the length of characters has changed.
+    // Update the character counter value each time the input handler is triggered.
     tweetChar.val(remainder);
   });
 });
