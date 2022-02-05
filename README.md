@@ -4,6 +4,14 @@ Tweeter is a simple, single-page Twitter clone built using HTML, CSS, JS, jQuery
 
 ## Final Product
 
+!["Desktop View - 1025px or higher"](https://github.com/mrjohnming/tweeter/blob/master/docs/View-1025px-or-Higher.png)
+
+!["Mobile View - 1024px or lower"](https://github.com/mrjohnming/tweeter/blob/master/docs/View-1024px-or-Lower.png)
+
+!["Composing a Tweet"](https://github.com/mrjohnming/tweeter/blob/master/docs/Composing-Tweet.png)
+
+!["Error Message - Tweet is >140 Characters"](https://github.com/mrjohnming/tweeter/blob/master/docs/Long-Tweet-Error.png)
+
 ## Dependencies
 
 - Node.js
