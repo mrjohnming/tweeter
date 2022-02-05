@@ -18,7 +18,7 @@ Tweeter is a simple, single-page Twitter clone built using HTML, CSS, JS, jQuery
 - body-parser
 - chance
 - express
--   md5
+- md5
 
 ## Getting Started
 
